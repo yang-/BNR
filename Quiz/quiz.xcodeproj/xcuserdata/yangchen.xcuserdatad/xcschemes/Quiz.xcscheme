@@ -17,7 +17,7 @@
                BlueprintIdentifier = "68237CEF193534140040E2CB"
                BuildableName = "Quiz.app"
                BlueprintName = "Quiz"
-               ReferencedContainer = "container:Quiz.xcodeproj">
+               ReferencedContainer = "container:quiz.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
                BlueprintIdentifier = "68237D0A193534140040E2CB"
                BuildableName = "QuizTests.xctest"
                BlueprintName = "QuizTests"
-               ReferencedContainer = "container:Quiz.xcodeproj">
+               ReferencedContainer = "container:quiz.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -45,7 +45,7 @@
             BlueprintIdentifier = "68237CEF193534140040E2CB"
             BuildableName = "Quiz.app"
             BlueprintName = "Quiz"
-            ReferencedContainer = "container:Quiz.xcodeproj">
+            ReferencedContainer = "container:quiz.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -64,7 +64,7 @@
             BlueprintIdentifier = "68237CEF193534140040E2CB"
             BuildableName = "Quiz.app"
             BlueprintName = "Quiz"
-            ReferencedContainer = "container:Quiz.xcodeproj">
+            ReferencedContainer = "container:quiz.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -82,7 +82,7 @@
             BlueprintIdentifier = "68237CEF193534140040E2CB"
             BuildableName = "Quiz.app"
             BlueprintName = "Quiz"
-            ReferencedContainer = "container:Quiz.xcodeproj">
+            ReferencedContainer = "container:quiz.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
