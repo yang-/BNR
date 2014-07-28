@@ -35,4 +35,12 @@
     self.view = backgroundView;
 }
 
+- (void)viewDidLoad
+{
+    // Always call the super implementation of viewDidLoad
+    [super viewDidLoad];
+    
+    NSLog(@"BNRHypnosisViewController loaded its view.");
+}
+
 @end

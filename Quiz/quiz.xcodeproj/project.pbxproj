@@ -205,7 +205,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 68237CEB193534140040E2CB /* Build configuration list for PBXProject "Quiz" */;
+			buildConfigurationList = 68237CEB193534140040E2CB /* Build configuration list for PBXProject "quiz" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -432,7 +432,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		68237CEB193534140040E2CB /* Build configuration list for PBXProject "Quiz" */ = {
+		68237CEB193534140040E2CB /* Build configuration list for PBXProject "quiz" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				68237D1A193534140040E2CB /* Debug */,
@@ -448,6 +448,7 @@
 				68237D1E193534150040E2CB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		68237D1F193534150040E2CB /* Build configuration list for PBXNativeTarget "QuizTests" */ = {
 			isa = XCConfigurationList;
@@ -456,6 +457,7 @@
 				68237D21193534150040E2CB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
