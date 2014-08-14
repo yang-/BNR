@@ -7,8 +7,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BNRDetailViewController">
             <connections>
                 <outlet property="dateLabel" destination="r6m-u2-4DT" id="gEd-LI-1pu"/>
+                <outlet property="imageView" destination="3FJ-l7-j1L" id="rs7-dY-5HR"/>
                 <outlet property="nameField" destination="vbl-Q7-bCR" id="wsF-zu-uEl"/>
                 <outlet property="serialNumberField" destination="7mW-rH-9qn" id="rGd-J6-iBG"/>
+                <outlet property="toolbar" destination="2E2-A8-ZW4" id="Jwb-Rx-FRU"/>
                 <outlet property="valueField" destination="IUX-Sg-ce0" id="Xh6-IG-ef5"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -73,20 +75,26 @@
                         <outlet property="delegate" destination="-1" id="oTN-UV-77M"/>
                     </connections>
                 </textField>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXq-IB-bk0">
-                    <rect key="frame" x="20" y="226" width="280" height="30"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3FJ-l7-j1L">
+                    <rect key="frame" x="20" y="226" width="280" height="280"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Change Date">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="changeDate:" destination="-1" eventType="touchUpInside" id="mws-ky-RMP"/>
-                    </connections>
-                </button>
+                </imageView>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2E2-A8-ZW4">
+                    <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <items>
+                        <barButtonItem systemItem="camera" id="z5w-iI-4ge">
+                            <connections>
+                                <action selector="takePicture:" destination="-1" id="lQb-ay-DIn"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+            <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>

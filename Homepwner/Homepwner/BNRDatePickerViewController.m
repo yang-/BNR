@@ -27,9 +27,7 @@
 {
     [super viewWillDisappear:animated];
     
-//    // Clear first responder
-//    [self.view endEditing:YES];
-    self.item.dateCreated = self.datePicker.date;
+//    self.item.dateCreated = self.datePicker.date;
 }
 
 

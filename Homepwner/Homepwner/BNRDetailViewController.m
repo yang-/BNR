@@ -10,12 +10,14 @@
 #import "BNRItem.h"
 #import "BNRDatePickerViewController.h"
 
-@interface BNRDetailViewController ()
+@interface BNRDetailViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UITextField *serialNumberField;
 @property (weak, nonatomic) IBOutlet UITextField *valueField;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
-- (IBAction)changeDate:(id)sender;
+//- (IBAction)changeDate:(id)sender;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
 
 @end
 
@@ -69,11 +71,43 @@
     [self.valueField resignFirstResponder];
 }
 
-- (IBAction)changeDate:(id)sender
+//- (IBAction)changeDate:(id)sender
+//{
+//    BNRDatePickerViewController *datePickerViewController = [[BNRDatePickerViewController alloc] init];
+//    datePickerViewController.item = self.item;
+//    
+//    [self.navigationController pushViewController:datePickerViewController animated:YES];
+//}
+
+- (IBAction)takePicture:(id)sender
 {
-    BNRDatePickerViewController *datePickerViewController = [[BNRDatePickerViewController alloc] init];
-    datePickerViewController.item = self.item;
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
     
-    [self.navigationController pushViewController:datePickerViewController animated:YES];
+    // If the device has a camera, take a picture, otherwise,
+    // just pick from photo library
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    } else {
+        imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    }
+    
+    imagePicker.delegate = self;
+    
+    // Place image picker on the screen
+    [self presentViewController:imagePicker animated:YES completion:nil];
 }
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    // Get picked image from info dictionary
+    UIImage *image = info[UIImagePickerControllerOriginalImage];
+    
+    // Put that image onto the screen in our image view
+    self.imageView.image = image;
+    
+    // Take image picker off the screen
+    // You must call this dismiss method
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 @end
