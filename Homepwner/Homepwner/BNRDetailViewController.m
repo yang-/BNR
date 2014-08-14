@@ -8,12 +8,14 @@
 
 #import "BNRDetailViewController.h"
 #import "BNRItem.h"
+#import "BNRDatePickerViewController.h"
 
 @interface BNRDetailViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UITextField *serialNumberField;
 @property (weak, nonatomic) IBOutlet UITextField *valueField;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+- (IBAction)changeDate:(id)sender;
 
 @end
 
@@ -54,4 +56,24 @@
     item.valueInDollars = [self.valueField.text intValue];
 }
 
+- (void)setItem:(BNRItem *)item
+{
+    _item = item;
+    self.navigationItem.title = _item.itemName;
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.nameField resignFirstResponder];
+    [self.serialNumberField resignFirstResponder];
+    [self.valueField resignFirstResponder];
+}
+
+- (IBAction)changeDate:(id)sender
+{
+    BNRDatePickerViewController *datePickerViewController = [[BNRDatePickerViewController alloc] init];
+    datePickerViewController.item = self.item;
+    
+    [self.navigationController pushViewController:datePickerViewController animated:YES];
+}
 @end

@@ -13,7 +13,7 @@
 
 @interface BNRItemsViewController ()
 
-@property (nonatomic, strong) IBOutlet UIView *headerView;
+//@property (nonatomic, strong) IBOutlet UIView *headerView;
 
 @end
 
@@ -24,7 +24,17 @@
     // Call the superclass's designated initializer
     self = [super initWithStyle:UITableViewStylePlain];
     if (self) {
+        UINavigationItem *navItem = self.navigationItem;
+        navItem.title = @"Homepwner";
         
+        // Create a new bar button item that will send
+        // addNewItem: to BNRItemsViewController
+        UIBarButtonItem *bbi = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addNewItem:)];
+        
+        // Set this bar button item as the right item in the navigationItem
+        navItem.rightBarButtonItem = bbi;
+        
+        navItem.leftBarButtonItem = self.editButtonItem;
     }
     return self;
 }
@@ -41,8 +51,8 @@
     [self.tableView registerClass:[UITableViewCell class]
            forCellReuseIdentifier:@"UITableViewCell"];
     
-    UIView *header = self.headerView;
-    [self.tableView setTableHeaderView:header];
+//    UIView *header = self.headerView;
+//    [self.tableView setTableHeaderView:header];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -72,15 +82,15 @@
     return cell;
 }
 
-- (UIView *)headerView
-{
-    // If you have not loaded the headerView yet...
-    if (!_headerView) {
-        // Load HeaderView.xib
-        [[NSBundle mainBundle] loadNibNamed:@"HeaderView" owner:self options:nil];
-    }
-    return _headerView;
-}
+//- (UIView *)headerView
+//{
+//    // If you have not loaded the headerView yet...
+//    if (!_headerView) {
+//        // Load HeaderView.xib
+//        [[NSBundle mainBundle] loadNibNamed:@"HeaderView" owner:self options:nil];
+//    }
+//    return _headerView;
+//}
 
 - (IBAction)addNewItem:(id)sender
 {
@@ -93,22 +103,22 @@
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationTop];
 }
 
-- (IBAction)toggleEditingMode:(id)sender
-{
-    // If you are currently in editing mode...
-    if (self.isEditing) {
-        // Change text of button to inform user of state
-        [sender setTitle:@"Edit" forState:UIControlStateNormal];
-        
-        // Turn off editing mode
-        [self setEditing:NO animated:YES];
-    } else {
-        // Change text of button to inform user of state
-        [sender setTitle:@"Done" forState:UIControlStateNormal];
-        // Enter editing mode
-        [self setEditing:YES animated:YES];
-    }
-}
+//- (IBAction)toggleEditingMode:(id)sender
+//{
+//    // If you are currently in editing mode...
+//    if (self.isEditing) {
+//        // Change text of button to inform user of state
+//        [sender setTitle:@"Edit" forState:UIControlStateNormal];
+//        
+//        // Turn off editing mode
+//        [self setEditing:NO animated:YES];
+//    } else {
+//        // Change text of button to inform user of state
+//        [sender setTitle:@"Done" forState:UIControlStateNormal];
+//        // Enter editing mode
+//        [self setEditing:YES animated:YES];
+//    }
+//}
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
